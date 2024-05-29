@@ -1,0 +1,23 @@
+<%- include("./header.ejs") %>
+
+<header>
+  <nav>
+    <h1>My Baking Blog</h1>
+    <a href="/new-post" class="btn">Create New Recipe</a>
+  </nav>
+</header>
+<main>
+  <div class="posts">
+    <% posts.forEach(post => { %>
+    <div class="post-box">
+      <article class="post">
+        <h2><%= post.title %></h2>
+        <p><%= post.content %></p>
+        <a href="/edit/<%= post.id %>" class="edit-link"><i class="fas fa-pencil-alt"></i> Edit</a> <!-- Edit link with post ID -->
+      </article>
+    </div>
+    <% }); %>
+  </div>
+</main>
+
+<%- include("./footer.ejs") %>
